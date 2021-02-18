@@ -202,3 +202,10 @@ body {
         }
     }
 }
+
+@media screen and (max-width:420px){
+.main__section {
+        width: 98%;
+        justify-content: space-evenly;
+    }
+}

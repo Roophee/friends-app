@@ -578,4 +578,13 @@ body {
             justify-content: space-evenly;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .main__section {
+    width: 98%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
 /*# sourceMappingURL=style.css.map */
