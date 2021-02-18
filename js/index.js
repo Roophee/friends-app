@@ -1,6 +1,6 @@
 'use strict';
 
-const DATA_URL = 'https://randomuser.me/api/?results=50';
+const DATA_URL = 'https://randomuser.me/api/?results=100';
 const RAW_DATA = [];
 const USER_STOR = new Map();
 const mainSection = document.querySelector('.main__section');
@@ -141,40 +141,28 @@ const clearInputText = () => {
     document.querySelector('input[type="text"]').value='';
 };
 
-// const setFilters = () => {
-// document.querySelector('.filter-search').addEventListener('keyup', function({target}) {
-    // Object.keys(filterSettings).forEach((key) => filterSettings[key] = '');
-//     uncheckAllRadio();
-//     filterSettings.searchParam = target.value.toLowerCase();
-//     updateUsers(applyFilters(RAW_DATA, searchFilter));
-// });
-
 const setFilters = () => {
     document.querySelector('.filter-search').addEventListener('keyup', function({target}) {
         Object.keys(filterSettings).forEach((key) => !Array.isArray(filterSettings[key]) ? filterSettings[key] = '': filterSettings[key]=[]);
         filterSettings.searchParam = target.value.toLowerCase();
         updateUsers(applyFilters(RAW_DATA, searchFilter));
         uncheckAllRadio();
-        console.log(filterSettings);
     });
 
     document.querySelector('.filter-gender').addEventListener('change', function({target}) {
         filterSettings.genderParam = target.value;
         uncheckSortRadio();
         updateUsers(applyFilters(RAW_DATA, genderFilter));
-        console.log(filterSettings);
     });
 
     document.querySelector('.filter-name').addEventListener('change', function({target}) {
         filterSettings.nameParam = target.value;
         updateUsers(applySort(RAW_DATA, nameSort));
-        console.log(filterSettings);
     });
 
     document.querySelector('.filter-age').addEventListener('change', function({target}) {
         filterSettings.ageParam = target.value;
         updateUsers(applySort(RAW_DATA, ageSort));
-        console.log(filterSettings);
     });
 
     document.querySelector('.main__form-reset').addEventListener('click', function({target}) {
@@ -183,7 +171,6 @@ const setFilters = () => {
             clearInputText();
             filterSettings.filteredData.splice(0,filterSettings.filteredData.length);
             updateUsers(RAW_DATA);
-            console.log(filterSettings);
         };
     });
 };
