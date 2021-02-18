@@ -341,11 +341,16 @@ template {
   display: none;
 }
 
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: #008080;
+  background: #c0c0c0;
 }
 
 body {
@@ -357,7 +362,6 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  width: 99.7%;
   overflow: auto;
 }
 
@@ -437,7 +441,6 @@ body {
 }
 
 .main {
-  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
