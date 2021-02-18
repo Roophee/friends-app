@@ -166,7 +166,7 @@ body {
 
 .footer {
     height: 30px;
-    width: 100%;
+    // width: 100%;
     background: $gray1;
     border: 1px outset $white;
     color:$gray2;
@@ -179,7 +179,7 @@ body {
     align-items: center;
 
         &__header {
-            width: calc(100% - 35px);
+            width: calc(100% - 28px);
         }
 
         &__form {
