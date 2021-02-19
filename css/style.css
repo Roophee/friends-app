@@ -344,6 +344,8 @@ template {
 :root {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -359,7 +361,6 @@ body {
   margin: 0;
   padding: 0;
   overflow: auto;
-  overflow-x: hidden;
 }
 
 .nav {
@@ -372,6 +373,10 @@ body {
 
 .nav-label {
   margin-left: 5px;
+  width: 130px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav-label a {
@@ -400,6 +405,12 @@ body {
 .flex-space-around {
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.flex-space-evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .flex-column {
@@ -476,6 +487,10 @@ body {
   margin: 5px;
 }
 
+.main__aside fieldset input[name="search"] {
+  width: 95%;
+}
+
 .main__section {
   width: calc(80% - 250px);
   min-width: 250px;
@@ -530,6 +545,45 @@ body {
   color: #212529;
 }
 
+.btn {
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-right-color: #424242;
+  border-bottom-color: #424242;
+  background: #c0c0c0;
+  color: #000;
+  padding: 2px 0 2px;
+  border-radius: 1px;
+}
+
+.btn:hover {
+  border: 2px inset #fff;
+  background: #c0c0c0;
+  color: #424242;
+  -webkit-box-shadow: -1px -1px #000;
+          box-shadow: -1px -1px #000;
+}
+
+.btn:focus {
+  border: 2px inset #fff;
+  background: #c0c0c0;
+  color: #424242;
+  -webkit-box-shadow: -1px -1px #000;
+          box-shadow: -1px -1px #000;
+  outline: 0;
+  background: url(/img/background.bmp);
+}
+
+.btn:active {
+  border: 2px inset #fff;
+  color: #424242;
+  -webkit-box-shadow: -1px -1px #000;
+          box-shadow: -1px -1px #000;
+  outline: 0;
+  background: url(/img/background.bmp);
+}
+
 @media screen and (max-width: 835px) {
   .main {
     display: -webkit-box;
@@ -554,11 +608,11 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-bottom: 10px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+    margin-bottom: 10px;
   }
   .main__aside {
     display: -webkit-box;
