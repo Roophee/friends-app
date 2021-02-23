@@ -191,7 +191,7 @@ const changeEventHandler= ({target}) => {
 }
 
 const resetEventHandler = function({target}) {
-    if (target.value === 'reset'){
+    if (target.value.toLowerCase() === 'reset'){
         uncheckAllRadio();
         clearInputText();
         filterSettings.filteredData.splice(0,filterSettings.filteredData.length);
