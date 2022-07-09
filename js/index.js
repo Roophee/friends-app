@@ -1,7 +1,7 @@
 'use strict';
 
 const DATA_URL = 'https://randomuser.me/api/?results=100';
-let RAW_DATA = [];
+const RAW_DATA = [];
 const NODES_STORAGE = new Map();
 const mainSection = document.querySelector('.main__section');
 const filterSettings = {
@@ -42,7 +42,7 @@ const fetchData = (url) => fetch(url)
     })
 
 const storeData = (results) => {
-    RAW_DATA = results;
+    RAW_DATA.push(...results);
     results.forEach((item) => {
         NODES_STORAGE.set(item, createUserCards(item));
     });
